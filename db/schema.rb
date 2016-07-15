@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715111604) do
+ActiveRecord::Schema.define(version: 20160715143944) do
 
   create_table "problems", force: :cascade do |t|
     t.integer  "theme_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160715111604) do
     t.integer  "correct_counter"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "section_id"
+    t.index ["section_id"], name: "index_problems_on_section_id"
     t.index ["theme_id"], name: "index_problems_on_theme_id"
   end
 

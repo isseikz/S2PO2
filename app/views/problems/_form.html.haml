@@ -8,8 +8,11 @@
         - problem.errors.full_messages.each do |message|
           %li= message
   .field
+    = f.label :section_id
+    = f.number_field :section_id
+  .field
     = f.label :theme_id
-    = f.text_field :theme_id
+    = f.number_field :theme_id
   .field
     = f.label :category
     = f.number_field :category
@@ -27,5 +30,3 @@
     = f.number_field :correct_counter
   .actions
     = f.submit
-
-  

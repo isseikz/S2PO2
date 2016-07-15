@@ -5,6 +5,7 @@
 %table
   %thead
     %tr
+      %td Section 
       %th Theme
       %th Category
       %th Level
@@ -16,6 +17,8 @@
   %tbody
     - @problems.each do |problem|
       %tr
+        %td
+          = problem.section
         %td
           = problem.theme
         %td
