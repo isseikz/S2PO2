@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715090530) do
+ActiveRecord::Schema.define(version: 20160715091900) do
 
   create_table "problems", force: :cascade do |t|
     t.integer  "theme_id_id"
-    t.integer  "type"
+    t.integer  "category"
     t.integer  "level"
     t.text     "content"
     t.text     "answer"

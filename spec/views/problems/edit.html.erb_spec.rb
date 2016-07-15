@@ -4,7 +4,7 @@ RSpec.describe "problems/edit", type: :view do
   before(:each) do
     @problem = assign(:problem, Problem.create!(
       :theme_id => nil,
-      :type => 1,
+      :category => 1,
       :level => 1,
       :content => "MyText",
       :answer => "MyText",

@@ -5,7 +5,7 @@ RSpec.describe "problems/index", type: :view do
     assign(:problems, [
       Problem.create!(
         :theme_id => nil,
-        :type => 2,
+        :category => 2,
         :level => 3,
         :content => "MyText",
         :answer => "MyText",
