@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @problem.theme_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @problem.type %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @problem.level %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @problem.content %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @problem.answer %>
+</p>
+
+<p>
+  <strong>Correct counter:</strong>
+  <%= @problem.correct_counter %>
+</p>
+
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<%= link_to 'Back', problems_path %>

@@ -10,6 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160715090530) do
+
+  create_table "problems", force: :cascade do |t|
+    t.integer  "theme_id_id"
+    t.integer  "type"
+    t.integer  "level"
+    t.text     "content"
+    t.text     "answer"
+    t.integer  "correct_counter"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["theme_id_id"], name: "index_problems_on_theme_id_id"
+  end
 
 end
