@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'mathjax-rails', '~> 2.5', '>= 2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5', '>= 3.5.1'
   gem 'rails-controller-testing', '~> 0.0.3' , require: false
+  gem 'erb2haml', '~> 0.1.5'
 
 end
 
