@@ -1,3 +1,3 @@
 class Problem < ApplicationRecord
-  belongs_to :theme_id
+  belongs_to :theme
 end

@@ -4,7 +4,7 @@ RSpec.describe "problems/index", type: :view do
   before(:each) do
     assign(:problems, [
       Problem.create!(
-        :theme_id => nil,
+        :theme => 1,
         :category => 2,
         :level => 3,
         :content => "MyText",
@@ -12,8 +12,8 @@ RSpec.describe "problems/index", type: :view do
         :correct_counter => 4
       ),
       Problem.create!(
-        :theme_id => nil,
-        :type => 2,
+        :theme => nil,
+        :category => 2,
         :level => 3,
         :content => "MyText",
         :answer => "MyText",

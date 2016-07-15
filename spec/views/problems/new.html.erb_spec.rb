@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "problems/new", type: :view do
   before(:each) do
     assign(:problem, Problem.new(
-      :theme_id => nil,
+      :theme => 1,
       :category => 1,
       :level => 1,
       :content => "MyText",
@@ -17,9 +17,9 @@ RSpec.describe "problems/new", type: :view do
 
     assert_select "form[action=?][method=?]", problems_path, "post" do
 
-      assert_select "input#problem_theme_id_id[name=?]", "problem[theme_id_id]"
+      assert_select "input#problem_theme_id[name=?]", "problem[theme_id]"
 
-      assert_select "input#problem_type[name=?]", "problem[type]"
+      assert_select "input#problem_category[name=?]", "problem[category]"
 
       assert_select "input#problem_level[name=?]", "problem[level]"
 

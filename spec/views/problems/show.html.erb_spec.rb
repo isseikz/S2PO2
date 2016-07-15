@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "problems/show", type: :view do
   before(:each) do
     @problem = assign(:problem, Problem.create!(
-      :theme_id => nil,
+      :theme => 1,
       :category => 2,
       :level => 3,
       :content => "MyText",

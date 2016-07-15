@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715091900) do
+ActiveRecord::Schema.define(version: 20160715111604) do
 
   create_table "problems", force: :cascade do |t|
-    t.integer  "theme_id_id"
+    t.integer  "theme_id"
     t.integer  "category"
     t.integer  "level"
     t.text     "content"
@@ -21,7 +21,31 @@ ActiveRecord::Schema.define(version: 20160715091900) do
     t.integer  "correct_counter"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["theme_id_id"], name: "index_problems_on_theme_id_id"
+    t.index ["theme_id"], name: "index_problems_on_theme_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.integer  "number"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_sections_on_subject_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.integer  "section_id"
+    t.integer  "number"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_themes_on_section_id"
   end
 
 end
