@@ -1,0 +1,29 @@
+= form_for(problem) do |f|
+  - if problem.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(problem.errors.count, "error")
+        prohibited this problem from being saved:
+      %ul
+        - problem.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :theme_id
+    = f.text_field :theme_id
+  .field
+    = f.label :category
+    = f.number_field :category
+  .field
+    = f.label :level
+    = f.number_field :level
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :answer
+    = f.text_area :answer
+  .field
+    = f.label :correct_counter
+    = f.number_field :correct_counter
+  .actions
+    = f.submit
