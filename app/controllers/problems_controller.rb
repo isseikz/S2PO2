@@ -25,7 +25,6 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(problem_params)
-    @problem.correct_counter = 0
 
     respond_to do |format|
       if @problem.save

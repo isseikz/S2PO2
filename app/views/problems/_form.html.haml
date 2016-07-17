@@ -8,11 +8,11 @@
         - problem.errors.full_messages.each do |message|
           %li= message
   .field
-    = f.label :section_id
-    = f.number_field :section_id
+    = f.label :section
+    = f.select :section_id, options_for_select(Section.all.map{ |s| [s.title, s.id]})
   .field
-    = f.label :theme_id
-    = f.number_field :theme_id
+    = f.label :theme
+    = f.select :theme_id, options_for_select(Theme.all.map{|t| [t.id_and_title, t.id]})
   .field
     = f.label :category
     = f.number_field :category
