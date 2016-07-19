@@ -1,5 +1,6 @@
 class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:index, :show]
 
   # GET /problems
   # GET /problems.json
@@ -69,6 +70,6 @@ class ProblemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:theme_id_id, :type, :level, :content, :answer, :correct_counter)
+      params.require(:problem).permit(:theme_id, :category, :level, :content, :answer, :correct_counter)
     end
 end
