@@ -9,6 +9,7 @@
 
 # Ignore seeds.rb.
 /db/seeds.rb
+/db/shema.rb
 
 # Ignore bundler config.
 /.bundle
