@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719085901) do
+ActiveRecord::Schema.define(version: 20160721055045) do
 
   create_table "problems", force: :cascade do |t|
     t.integer  "theme_id"
@@ -33,6 +33,24 @@ ActiveRecord::Schema.define(version: 20160719085901) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_sections_on_subject_id"
+  end
+
+  create_table "sheet_problems", force: :cascade do |t|
+    t.integer  "sheet_id"
+    t.integer  "problem_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem_id"], name: "index_sheet_problems_on_problem_id"
+    t.index ["sheet_id"], name: "index_sheet_problems_on_sheet_id"
+  end
+
+  create_table "sheets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "sheets_problem_id"
+    t.index ["sheets_problem_id"], name: "index_sheets_on_sheets_problem_id"
+    t.index ["user_id"], name: "index_sheets_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|

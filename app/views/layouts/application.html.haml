@@ -20,19 +20,22 @@
         %div#navbar.navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "/"} Home
+              %a{:href => "/"} ホーム
             %li
-              %a{:href => "/problems"} Problems
+              %a{:href => "/sheet"} 問題を解く
+            %li
+              %a{:href => "/problems"} 問題を作る
             %li.dropdown
               %a.dropdown-toggle{:href => "#", "data-toggle" =>"dropdown", "role"=>"button","aria-haspopup"=>"true", "aria-expanded"=>"false"}
-                Menu
+                ユーザ情報/ログアウト
                 %span.caret
               %ul.dropdown-menu
                 -if current_user
+                  %li=current_user.first_name + current_user.last_name + "さん"
                   %li=current_user.email
                   %li=link_to "Log out", logout_path, method: "delete"
                 -else
                   %li=link_to "Log in", 'login'
                   %li=link_to "Sign up", 'signup'
-
-    = yield
+%section#main
+  =yield
