@@ -7,6 +7,9 @@
 # Ignore initial data.
 /tmp/initial_data.rb
 
+# Ignore seeds.rb.
+/db/seeds.rb
+
 # Ignore bundler config.
 /.bundle
 
