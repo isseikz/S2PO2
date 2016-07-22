@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'problems#index'
+  root 'sheets#new'
 
   resources :problems
   mathjax 'mathjax'
