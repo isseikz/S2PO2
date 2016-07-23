@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get 'sheet' => 'sheets#new'
   post 'sheet' => 'sheets#create'
   get '' => 'sheets#show'
+  
+  get 'new_sheet_forms' => 'sheets#new'
+  post 'new_sheet_forms' => 'sheets#create'
 end

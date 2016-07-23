@@ -9,4 +9,5 @@ class Problem < ApplicationRecord
   def set_default_value
     self.correct_counter ||= 0
   end
+  
 end

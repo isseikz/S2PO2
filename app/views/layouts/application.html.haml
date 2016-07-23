@@ -38,4 +38,6 @@
                   %li=link_to "Log in", 'login'
                   %li=link_to "Sign up", 'signup'
 %section#main
+  =h(flash[:notice])
+  =h(flash[:error])
   =yield

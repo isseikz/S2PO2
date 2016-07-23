@@ -1,1 +1,8 @@
-=link_to "今日の問題", sheet_path, method: :post
+%h1 今日の問題
+
+=form_for(@new_sheet_form) do |f|
+  .field
+  =f.label :type, "問題の種類を選択"
+  =f.select :type, options_for_select({"すべての問題からランダムに3問" => 3,"未正解の問題から３問" => 2, "最新の問題から３問"=>1}, 2)
+  .actions
+  =f.submit
